@@ -30,7 +30,7 @@ public class CommonController {
     }
 
 
-    @PostMapping("/save/{table}")
+    @PostMapping("/{table}")
     public void save(@PathVariable("table") String table,
                        @RequestBody Map<String,Object> saveObj){
         SaveReq saveReq = new SaveReq();
@@ -39,7 +39,7 @@ public class CommonController {
         commonService.save(saveReq);
     }
 
-    @PutMapping("/save/{table}")
+    @PutMapping("/{table}")
     public void update(@PathVariable("table") String table,
                      @RequestBody UpdateReq updateReq){
         updateReq.setTable(table);
