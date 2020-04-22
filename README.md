@@ -49,6 +49,7 @@ result:
 ##### 详细语法
 ##### 1.POST /common/query/{table}/{resultType}
 table: 	对应数据库表名,如果表名为`user_info`,这里为`/common/query/userInfo/{resultType}`,自动将下划线转为驼峰，如果表为有统一前缀，如`t_user_info`,可以在yml配置中配置`common-api.table-prefix=t_`,来忽略前缀
+
 resultType: 	它有三种值（`first` | `list` | `page`）,分别对应返回的三种格式。first：返回格式为`{}`,list返回格式为`[{}]`,page返回格式为：`{"pageSize":15,"pageNo":1,"data":[]}`
 
 入参：		
@@ -65,24 +66,24 @@ resultType: 	它有三种值（`first` | `list` | `page`）,分别对应返回�
 
 ```
 {
-      		"account":"test",  
-      		"start_time":{	 
-      			"$gte":"2020-03-13 00:00:00",
-      		    "$gt":"2020-03-13 00:00:00",
-      			"$lte":"2020-03-20 00:00:00",
-      		    "$lt":"2020-03-20 00:00:00"
+          "account":"test",  
+          "start_time":{	 
+                 "$gte":"2020-03-13 00:00:00",
+      	         "$gt":"2020-03-13 00:00:00",
+      	         "$lte":"2020-03-20 00:00:00",
+      	         "$lt":"2020-03-20 00:00:00"
            },
-      		"type":{"$ne":2},
-      	    "name":{"$like":"%hello%"},
-      		"$and":{
-      			"status":3,
-      			"account":"001"
+      	   "type":{"$ne":2},
+      	   "name":{"$like":"%hello%"},
+      	   "$and":{
+      		 "status":3,
+      		 "account":"001"
              },
-      		"$or":{
-      			"status":3,
-      			"account":"001"
+      	   "$or":{
+      		 "status":3,
+      		 "account":"001"
             },
-      		"configure":["1111",1001]
+      	    "configure":["1111",1001]
 }
 ```
 
@@ -139,7 +140,7 @@ common-api:
   black-table-field-list:
     t_user:
       - password
-	t_user_info:
+    t_user_info:
       - '*'
 ```
 
