@@ -9,8 +9,8 @@ spring:
     date-format: yyyy-MM-dd HH:mm:ss
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowMultiQueries=true
-    username: 001
-    password: 123456
+    username: root
+    password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 
 logging:
@@ -20,8 +20,5 @@ logging:
 common-api:
   table-prefix: t_
   black-table-field-list:
-    t_content:
-      - title
-    t_manage:
-      - id
-      - org_account
+    content:
+      - '*'

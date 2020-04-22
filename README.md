@@ -1,5 +1,5 @@
 # common-api
-特性：
+## 特性：
 
 1.基于单表的增删改，减少不必要的重复劳动 
 
@@ -11,14 +11,23 @@
 
 5.黑名单控制，禁止查询某张表，某个字段
 
-快速开始：
+## 快速开始：
 ```pom
 <dependency>
-	<groupId>com.alenfive</groupId>
-	<artifactId>common-api-boot-starter</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+    <groupId>com.github.alenfive</groupId>
+    <artifactId>common-api-boot-starter</artifactId>
+    <version>1.0.0.RELEASE</version>
 </dependency>
 ```
+
+一旦引入`common-api-boot-starter`,将自动创建以下接口：    
+
+1.POST /common/query/{table}/{resultType} 单表查询接口
+ 
+2.POST /common/query/{table}  新增
+
+3.PUT /common/query/{table}  修改
+
 开始访问：
 ``` shell
 curl -i -X POST \
@@ -31,20 +40,12 @@ curl -i -X POST \
 }' \
  'http://localhost:8080/common/query/user/first'
 
-result:
+#result:
 {
     "id":1,
     "name":"hello"
 }
  ```
-
-一旦引入`common-api-boot-starter`,将自动创建以下接口：    
-
-1.POST /common/query/{table}/{resultType} 单表查询接口
- 
-2.POST /common/query/{table}  新增
-
-3.PUT /common/query/{table}  修改
 
 ##### 详细语法
 ##### 1.POST /common/query/{table}/{resultType}
