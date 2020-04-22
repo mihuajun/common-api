@@ -19,7 +19,7 @@ public class CommonController {
     @Autowired
     private CommonService commonService;
 
-    @PostMapping("/query/{table}/{resultType}")
+    @PostMapping("/{table}/{resultType}")
     public Object query(@Validated @RequestBody QueryReq queryReq,
                         @PathVariable("table") String table,
                         @PathVariable("resultType") QueryReq.ResultType resultType) {

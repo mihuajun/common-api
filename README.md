@@ -22,11 +22,11 @@
 
 一旦引入`common-api-boot-starter`,将自动创建以下接口：    
 
-1.POST /common/query/{table}/{resultType} 单表查询接口
+1.POST /common/{table}/{resultType} 单表查询接口
  
-2.POST /common/query/{table}  新增
+2.POST /common/{table}  新增
 
-3.PUT /common/query/{table}  修改
+3.PUT /common/{table}  修改
 
 开始访问：
 ``` shell
@@ -38,7 +38,7 @@ curl -i -X POST \
     "id":"1"
   }
 }' \
- 'http://localhost:8080/common/query/user/first'
+ 'http://localhost:8080/common/user/first'
 
 #result:
 {
@@ -48,7 +48,7 @@ curl -i -X POST \
  ```
 
 ##### 详细语法
-##### 1.POST /common/query/{table}/{resultType}
+##### 1.POST /common/{table}/{resultType}
 table: 	对应数据库表名,如果表名为`user_info`,这里为`/common/query/userInfo/{resultType}`,自动将下划线转为驼峰，如果表为有统一前缀，如`t_user_info`,可以在yml配置中配置`common-api.table-prefix=t_`,来忽略前缀
 
 resultType: 	它有三种值（`first` | `list` | `page`）,分别对应返回的三种格式。first：返回格式为`{}`,list返回格式为`[{}]`,page返回格式为：`{"pageSize":15,"pageNo":1,"data":[]}`
@@ -103,7 +103,7 @@ resultType: 	它有三种值（`first` | `list` | `page`）,分别对应返回�
 生成的查询为:
 `where account = 'test' and start_time >= '2020-03-13 00:00:00' and start_time > '2020-03-13 00:00:00' and start_time <= '2020-03-20 00:00:00' and start_time < '2020-03-20 00:00:00' and type != 2 and name like '%hello%' and (status = 3 and account = '001') and (status = 3 or account = '001') and configure in ('1111',1001)`
 
-##### 2.POST /common/query/{table}  新增
+##### 2.POST /common/{table}  新增
 body:
 ```json
 {
@@ -111,7 +111,7 @@ body:
   "sex":1
 }
 ```
-##### 3.PUT /common/query/{table}  修改
+##### 3.PUT /common/{table}  修改
 body:
 
 ```json
