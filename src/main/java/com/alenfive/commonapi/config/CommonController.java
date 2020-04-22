@@ -4,8 +4,6 @@ import com.alenfive.commonapi.entity.QueryReq;
 import com.alenfive.commonapi.entity.SaveReq;
 import com.alenfive.commonapi.entity.UpdateReq;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,7 +42,6 @@ public class CommonController {
     @PutMapping("/save/{table}")
     public void update(@PathVariable("table") String table,
                      @RequestBody UpdateReq updateReq){
-
         updateReq.setTable(table);
         commonService.update(updateReq);
     }

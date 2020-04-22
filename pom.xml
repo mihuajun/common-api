@@ -8,7 +8,7 @@
         <version>2.2.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.alenfive</groupId>
+    <groupId>com.github.alenfive</groupId>
     <artifactId>common-api-boot-starter</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>common-api</name>
