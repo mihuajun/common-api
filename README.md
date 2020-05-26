@@ -16,7 +16,7 @@
 <dependency>
     <groupId>com.github.alenfive</groupId>
     <artifactId>common-api-boot-starter</artifactId>
-    <version>1.0.0.RELEASE</version>
+    <version>1.0.1.RELEASE</version>
 </dependency>
 ```
 

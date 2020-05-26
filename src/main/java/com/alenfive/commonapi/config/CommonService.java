@@ -317,7 +317,7 @@ public class CommonService {
     }
 
     public void delete(UpdateReq updateReq) {
-        StringBuilder sql = new StringBuilder("delete ").append(buildTable(updateReq.getTable())).append(" set ");
+        StringBuilder sql = new StringBuilder("delete from ").append(buildTable(updateReq.getTable()));
 
         String filter = buildFilter("$and",updateReq.getFilter());
         sql.append(" where ").append(filter);
