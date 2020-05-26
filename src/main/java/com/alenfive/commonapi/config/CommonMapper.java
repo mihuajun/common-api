@@ -37,4 +37,8 @@ public class CommonMapper {
     Integer update(String sql){
         return jdbcTemplate.update(sql);
     }
+
+    public void delete(String sql){
+        jdbcTemplate.execute(sql);
+    }
 }

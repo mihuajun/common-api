@@ -315,4 +315,17 @@ public class CommonService {
             throw new BizException(ErrorCode.SERVER_ERROR.getCode(),e.getCause().getMessage());
         }
     }
+
+    public void delete(UpdateReq updateReq) {
+        StringBuilder sql = new StringBuilder("delete ").append(buildTable(updateReq.getTable())).append(" set ");
+
+        String filter = buildFilter("$and",updateReq.getFilter());
+        sql.append(" where ").append(filter);
+        log.debug(sql.toString());
+        try {
+            commonMapper.delete(sql.toString());
+        }catch (Exception e){
+            throw new BizException(ErrorCode.SERVER_ERROR.getCode(),e.getCause().getMessage());
+        }
+    }
 }

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Map;
 
 /**
- * 单表基础 增/查/改
+ * 单表基础 增/查/改/删
  */
 @RestController
 @RequestMapping("common")
@@ -46,4 +46,10 @@ public class CommonController {
         commonService.update(updateReq);
     }
 
+    @DeleteMapping("/{table}")
+    public void delete(@PathVariable("table") String table,
+                       @RequestBody UpdateReq updateReq){
+        updateReq.setTable(table);
+        commonService.delete(updateReq);
+    }
 }

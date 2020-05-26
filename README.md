@@ -28,6 +28,8 @@
 
 3.PUT /common/{table}  修改
 
+4.DELETE /common/{table}  删除
+
 开始访问：
 ``` shell
 curl -i -X POST \
@@ -121,6 +123,16 @@ body:
 	},
 	"updateSet":{
 		"name":"hello1"
+	}
+}
+```
+##### 4.DELETE /common/{table}  删除
+body:
+
+```json
+{
+	"filter":{
+		"id":1
 	}
 }
 ```
