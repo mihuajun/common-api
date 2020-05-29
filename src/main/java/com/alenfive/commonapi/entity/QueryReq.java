@@ -52,7 +52,6 @@ public class QueryReq implements Serializable {
      *        },
      * 		"configure":["1111","0001","1001"]* 	}
      */
-    @NotNull(message = "'filter' 不能为空")
     private Map<String,Object> filter;
 
     /**
