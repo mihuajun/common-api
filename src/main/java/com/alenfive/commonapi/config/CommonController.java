@@ -20,10 +20,13 @@ public class CommonController {
     private CommonService commonService;
 
     @PostMapping("/{table}/{resultType}")
-    public Object query(@Validated @RequestBody QueryReq queryReq,
+    public Object query(@Validated @RequestBody(required = false) QueryReq queryReq,
                         @PathVariable("table") String table,
                         @PathVariable("resultType") QueryReq.ResultType resultType) {
 
+        if (queryReq == null){
+            queryReq = new QueryReq();
+        }
         queryReq.setTable(table);
         queryReq.setResultType(resultType);
         return commonService.query(queryReq);

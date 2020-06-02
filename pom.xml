@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.github.alenfive</groupId>
     <artifactId>common-api-boot-starter</artifactId>
-    <version>1.0.1.RELEASE</version>
+    <version>1.0.4.RELEASE</version>
     <name>common-api</name>
     <description>Demo project for Spring Boot</description>
 

@@ -169,6 +169,9 @@ public class CommonService {
     }
 
     private String buildFilter(String connector, Map<String, Object> filter) {
+        if (filter == null){
+            return "1=1";
+        }
         connector = connector.replace("$","");
         StringBuilder valStr = new StringBuilder();
         boolean isFirst = true;
@@ -225,7 +228,8 @@ public class CommonService {
                 valStr.append(" and ");
             }
             isFirst = false;
-            valStr.append(key).append(connector).append(buildStrValue(filter.get(item)));
+            Object val = item.equals("$like")?("%"+filter.get(item).toString()+"%"):filter.get(item);
+            valStr.append(key).append(connector).append(buildStrValue(val));
         }
         return valStr.toString();
     }
